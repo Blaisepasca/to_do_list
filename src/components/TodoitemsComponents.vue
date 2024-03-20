@@ -5,7 +5,8 @@
             <label for="ischecked" :class="!isChecked? '' :'notchecked'">{{ name }} </label>
             
         </div>
-        <img src="../assets/trash_30px.png" width="20" height="20" >
+        <button @click="deleteItem"><img src="../assets/trash_30px.png" width="20" height="20" ></button>
+        
     </div>
   </template>
   
@@ -20,7 +21,12 @@
         'name',
         'isChecked',
         'delete',
-        ]
+        ],
+        methods:{
+          deleteItem(){
+            this.$emit('delete-item')
+          }
+        }
     
   }
   </script>

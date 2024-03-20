@@ -18,7 +18,7 @@
         </form>
         <div class="todos">
             <div v-for="index in todos" :key="index">
-                <TodoitemsComponents :isChecked='index.ischecked' :name="index.name" :delete="index.delete" />
+                <TodoitemsComponents @delete-item='deleteItem' :isChecked='index.ischecked' :name="index.name" :delete="index.delete" />
             </div>
         </div>
         <div class="clear">
@@ -51,6 +51,9 @@ export default {
                 name:gettodo,
                 delete:false
             })
+        },
+        deleteItem(index){
+            this.todos.splice(index, 1)
         }
     },
 
