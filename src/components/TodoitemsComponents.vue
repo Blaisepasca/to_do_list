@@ -1,8 +1,8 @@
 <template>
     <div class="todoitems">
         <div class="check">
-            <input type="checkbox" @change="isChecked" id="ischecked">
-            <label for="ischecked">{{ name }} </label>
+            <input type="checkbox" @change="isChecked" @click="!isChecked" id="ischecked">
+            <label for="ischecked" :class="!isChecked? '' :'notchecked'">{{ name }} </label>
             
         </div>
         <img src="../assets/trash_30px.png" width="20" height="20" >
@@ -46,6 +46,9 @@ img{
 input{
     margin-top: 8px;
     
+}
+.notchecked{
+  text-decoration: overline;
 }
   
 
